@@ -61,7 +61,9 @@ Copiar código
 python plot_forecast_2025.py
 O resultado será salvo em outputs/forecast_2025_barras.png.
 
-📊 Resultados
+---
+
+## 📊 Resultados
 Arquivo: forecast_2025.csv → contém as previsões semanais de 2025.
 
 Gráficos:
@@ -72,13 +74,17 @@ forecast_2025_barras.png: evolução semanal prevista para 2025.
 
 Essas previsões permitem visualizar picos e quedas ao longo do ano, auxiliando o trabalho de planejamento e vigilância em saúde.
 
-💬 Explicação Simples
+---
+
+## 💬 Explicação Simples
 O projeto pega o histórico de casos e ensina o computador a entender como eles se comportam ao longo das semanas.
 Depois, ele tenta “adivinhar” como será o comportamento no próximo ano, com base nos padrões observados.
 
 O objetivo não é prever números exatos, mas entender tendências — e isso já é muito valioso para a vigilância epidemiológica.
 
-##🧠 Tecnologias Utilizadas
+---
+
+## 🧠 Tecnologias Utilizadas
 Categoria	Ferramenta
 Linguagem	🐍 Python
 Análise de Dados	📊 Pandas, NumPy
@@ -86,21 +92,25 @@ Modelagem	🤖 Scikit-learn (Random Forest)
 Visualização	📈 Matplotlib, Seaborn
 Armazenamento de Modelo	💾 Joblib
 
+---
 
-##🤝 Apoio do ChatGPT
+## 🤝 Apoio do ChatGPT
 Durante o desenvolvimento, o ChatGPT foi utilizado como assistente técnico e organizacional.
 
 O ChatGPT atuou como ferramenta de apoio, e todo o conteúdo foi adaptado à realidade e experiência da vigilância epidemiológica.
 
+---
 
-##🚀 Próximos Passos
+## 🚀 Próximos Passos
 Incluir dados de chuva e temperatura para melhorar a precisão.
 
 Implementar uma previsão iterativa, onde cada semana prevista influencia a próxima.
 
 Expandir o modelo para outras doenças de notificação, como chikungunya e zika.
 
-##✨ Autor
+---
+
+## ✨ Autor
 👨‍💻 Vitor da Silva Leal
 Profissional de Vigilância Epidemiológica
 📍 Volta Redonda — RJ
