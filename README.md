@@ -112,5 +112,7 @@ Expandir o modelo para outras doenças de notificação, como chikungunya e zika
 
 ## ✨ Autor
 👨‍💻 Vitor da Silva Leal
+
 Profissional de Vigilância Epidemiológica
+
 📍 Volta Redonda — RJ
