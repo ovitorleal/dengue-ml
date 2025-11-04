@@ -31,15 +31,15 @@ Abaixo está a estrutura de arquivos e pastas do projeto:
 
 ```bash
 📂 dengue-ml/
-┣ 📜 main.py               # Código principal que treina o modelo e gera a previsão
-┣ 📜 plot_forecast_2025.py   # Script para gerar os gráficos de visualização
-┣ 📜 requirements.txt      # Lista de bibliotecas Python necessárias
-┣ 📜 dengue.csv            # Base de dados original extraída do SINAN
+┣ 📜 main.py                     # Código principal que treina o modelo e gera a previsão
+┣ 📜 plot_forecast_2025.py       # Script para gerar os gráficos de visualização
+┣ 📜 requirements.txt            # Lista de bibliotecas Python necessárias
+┣ 📜 dengue.csv                  # Base de dados original extraída do SINAN
 ┣ 📂 outputs/
-┃ ┣ 📜 forecast_2025.csv       # Tabela com as 52 previsões semanais para 2025
-┃ ┣ 🖼️ forecast_plot.png       # Gráfico com histórico + projeção para 2025
+┃ ┣ 📜 forecast_2025.csv         # Tabela com as 52 previsões semanais para 2025
+┃ ┣ 🖼️ forecast_plot.png         # Gráfico com histórico + projeção para 2025
 ┃ ┗ 🖼️ forecast_2025_barras.png  # Gráfico em barras das previsões semanais
-┗ 📜 README.md             # Este arquivo de documentação
+┗ 📜 README.md                   # Este arquivo de documentação
 ````
 
 -----
