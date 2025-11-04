@@ -1,3 +1,34 @@
+Ah, sim\! Entendi perfeitamente agora. Peço desculpas pela confusão.
+
+O problema não é o texto que eu enviei, mas **onde** você está colando ele.
+
+Analisando sua imagem, você está colando o **conteúdo inteiro do `README.md`** *dentro* de um bloco de código `bash` que já existia no seu arquivo.
+
+Veja na sua imagem:
+
+  * Na linha 32, você tem ` ```bash `
+  * Isso diz ao editor: "Tudo o que vem a seguir é um código de terminal, ignore qualquer formatação."
+  * Por isso, quando você cola o meu texto lá dentro, ele exibe `## Estrutura do Projeto` e `📂 dengue-ml/` como texto simples, em vez de formatá-los como um título e uma árvore de arquivos.
+
+### A Solução Correta
+
+Você deve substituir **TODO** o conteúdo do seu arquivo `README.md` pelo texto que eu lhe dei. O arquivo `README.md` em si *não* deve começar com ` ```bash `.
+
+**Faça o seguinte:**
+
+1.  Abra seu arquivo `README.md`.
+2.  Selecione **TUDO** (Ctrl+A ou Cmd+A).
+3.  **Delete** todo o conteúdo.
+4.  Agora, copie o bloco de código abaixo e cole no seu arquivo `README.md` (que agora está vazio).
+5.  Salve o arquivo.
+
+Quando você fizer isso, o seu editor de código (ou o GitHub) vai ler os `##` como títulos e os ` ```bash ` como *inícios* de blocos de código, e tudo será formatado corretamente.
+
+### Código completo para o `README.md`
+
+Copie tudo daqui de baixo:
+
+````markdown
 # 🦠 Previsão Semanal de Casos de Dengue — 2025
 
 ![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)
@@ -9,7 +40,7 @@
 
 ## 🎯 Objetivo
 
-Este projeto foi desenvolvido por **Vitor da Silva Leal**, profissional da área de **Vigilância Epidemiológica**, com o propósito de aplicar a tecnologia para **prever o número de casos semanais de dengue no ano de 2025**.  
+Este projeto foi desenvolvido por **Vitor da Silva Leal**, profissional da área de **Vigilância Epidemiológica**, com o propósito de aplicar a tecnologia para **prever o número de casos semanais de dengue no ano de 2025**.
 
 A ideia é simples, mas poderosa: usar dados reais de notificações anteriores para **antecipar possíveis aumentos de casos**, ajudando a equipe de vigilância a **planejar ações preventivas** com mais eficiência.
 
@@ -19,100 +50,115 @@ A ideia é simples, mas poderosa: usar dados reais de notificações anteriores 
 
 > “Quem trabalha com vigilância sabe: o segredo é se antecipar.”
 
-Com base nessa ideia, este projeto transforma dados históricos do **SINAN (Sistema Nacional de Agravos de Notificação)** em uma previsão das 52 semanas de 2025.  
+Com base nessa ideia, este projeto transforma dados históricos do **SINAN (Sistema Nacional de Agravos de Notificação)** em uma previsão das 52 semanas de 2025.
+
 O modelo aprende com os padrões de anos anteriores (2019 a 2024) e gera uma projeção que pode servir de apoio ao planejamento de campanhas e decisões estratégicas na saúde pública.
 
 ---
 
 ## 🧩 Estrutura do Projeto
 
-📂 dengue-ml
-┣ 📜 main.py → código principal que treina o modelo e gera a previsão
-┣ 📜 plot_forecast_2025.py → script para gerar o gráfico das previsões semanais
-┣ 📜 requirements.txt → lista de bibliotecas necessárias
-┣ 📜 dengue.csv → base de dados original (extraída do SINAN)
-┣ 📂 outputs
-┃ ┣ forecast_2025.csv → tabela com as 52 previsões semanais
-┃ ┣ forecast_plot.png → gráfico histórico + projeção 2025
-┃ ┗ forecast_2025_barras.png → gráfico em barras das previsões semanais
-┗ 📜 README.md → este arquivo
+Abaixo está a estrutura de arquivos e pastas do projeto:
 
-yaml
-Copiar código
+```bash
+📂 dengue-ml/
+┣ 📜 main.py               # Código principal que treina o modelo e gera a previsão
+┣ 📜 plot_forecast_2025.py   # Script para gerar os gráficos de visualização
+┣ 📜 requirements.txt      # Lista de bibliotecas Python necessárias
+┣ 📜 dengue.csv            # Base de dados original extraída do SINAN
+┣ 📂 outputs/
+┃ ┣ 📜 forecast_2025.csv       # Tabela com as 52 previsões semanais para 2025
+┃ ┣ 🖼️ forecast_plot.png       # Gráfico com histórico + projeção para 2025
+┃ ┗ 🖼️ forecast_2025_barras.png  # Gráfico em barras das previsões semanais
+┗ 📜 README.md             # Este arquivo de documentação
+````
 
----
+-----
 
 ## ⚙️ Como Executar
 
-1. **Instale as dependências:**
-   ```bash
-   pip install -r requirements.txt
-Execute o modelo para gerar as previsões:
+Siga os passos abaixo para executar o projeto localmente.
 
-bash
-Copiar código
-python main.py --input dengue.csv --output outputs --seed 42
-Isso treina o modelo e gera o arquivo outputs/forecast_2025.csv.
+1.  **Prepare o ambiente e instale as dependências:**
 
-Gere o gráfico semanal:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-bash
-Copiar código
-python plot_forecast_2025.py
-O resultado será salvo em outputs/forecast_2025_barras.png.
+2.  **Treine o modelo e gere as previsões:**
+    Este comando irá ler o arquivo `dengue.csv`, treinar o modelo e salvar o resultado `forecast_2025.csv` na pasta `outputs`.
 
----
+    ```bash
+    python main.py --input dengue.csv --output outputs --seed 42
+    ```
+
+3.  **Gere os gráficos de visualização:**
+    Este comando utilizará o arquivo de previsão gerado no passo anterior para criar e salvar os gráficos na pasta `outputs`.
+
+    ```bash
+    python plot_forecast_2025.py
+    ```
+
+-----
 
 ## 📊 Resultados
-Arquivo: forecast_2025.csv → contém as previsões semanais de 2025.
 
-Gráficos:
+O projeto gera os seguintes arquivos na pasta `outputs`:
 
-forecast_plot.png: histórico de 2019–2024 + projeção de 2025.
+### Arquivo de Previsão
 
-forecast_2025_barras.png: evolução semanal prevista para 2025.
+  * **`forecast_2025.csv`**: Tabela de dados contendo as previsões do número de casos de dengue para cada uma das 52 semanas epidemiológicas de 2025.
 
-Essas previsões permitem visualizar picos e quedas ao longo do ano, auxiliando o trabalho de planejamento e vigilância em saúde.
+### Visualizações Geradas
 
----
+  * **`forecast_plot.png`**: Gráfico de linha mostrando a série histórica de casos (2019–2024) em conjunto com a projeção para 2025, permitindo uma análise comparativa.
+  * **`forecast_2025_barras.png`**: Gráfico de barras que detalha a evolução semanal dos casos previstos para 2025, ideal para identificar picos e quedas sazonais.
+
+Essas saídas permitem visualizar tendências, auxiliando diretamente o trabalho de planejamento e vigilância em saúde.
+
+-----
 
 ## 💬 Explicação Simples
-O projeto pega o histórico de casos e ensina o computador a entender como eles se comportam ao longo das semanas.
-Depois, ele tenta “adivinhar” como será o comportamento no próximo ano, com base nos padrões observados.
 
-O objetivo não é prever números exatos, mas entender tendências — e isso já é muito valioso para a vigilância epidemiológica.
+O projeto analisa o histórico de casos de dengue e "ensina" um modelo de computador a reconhecer os padrões de aumento e queda ao longo das semanas e anos. Com base nesse aprendizado, o modelo tenta "adivinhar" como esses padrões se comportarão no próximo ano.
 
----
+O objetivo principal não é acertar o número exato de casos, mas sim **identificar as tendências** — o que já é uma ferramenta extremamente valiosa para a vigilância epidemiológica se preparar.
+
+-----
 
 ## 🧠 Tecnologias Utilizadas
-Categoria	Ferramenta
-Linguagem	🐍 Python
-Análise de Dados	📊 Pandas, NumPy
-Modelagem	🤖 Scikit-learn (Random Forest)
-Visualização	📈 Matplotlib, Seaborn
-Armazenamento de Modelo	💾 Joblib
 
----
+| Categoria                | Ferramenta / Biblioteca               |
+| :----------------------- | :------------------------------------ |
+| **Linguagem** | 🐍 Python                             |
+| **Análise de Dados** | 📊 Pandas, NumPy                      |
+| **Modelagem de ML** | 🤖 Scikit-learn (Random Forest)       |
+| **Visualização de Dados**| 📈 Matplotlib, Seaborn                |
+| **Armazenamento** | 💾 Joblib (para salvar o modelo)      |
+
+-----
 
 ## 🤝 Apoio do ChatGPT
-Durante o desenvolvimento, o ChatGPT foi utilizado como assistente técnico e organizacional.
 
-O ChatGPT atuou como ferramenta de apoio, e todo o conteúdo foi adaptado à realidade e experiência da vigilância epidemiológica.
+Durante o desenvolvimento deste projeto, o ChatGPT foi utilizado como uma ferramenta de assistência técnica e organizacional. Ele auxiliou na estruturação do código, na depuração de erros e na elaboração desta documentação. Todo o conteúdo técnico e a lógica do projeto foram adaptados e validados com base na realidade e na experiência profissional em vigilância epidemiológica.
 
----
+-----
 
 ## 🚀 Próximos Passos
-Incluir dados de chuva e temperatura para melhorar a precisão.
 
-Implementar uma previsão iterativa, onde cada semana prevista influencia a próxima.
+  * **Enriquecer o Modelo**: Incluir variáveis externas, como dados de chuva e temperatura, para melhorar a precisão das previsões.
+  * **Implementar Previsão Iterativa**: Desenvolver um sistema onde a previsão de uma semana possa ser usada como dado de entrada para prever a semana seguinte.
+  * **Expandir para Outras Doenças**: Adaptar o modelo para prever casos de outras doenças de notificação compulsória, como Chikungunya e Zika.
 
-Expandir o modelo para outras doenças de notificação, como chikungunya e zika.
-
----
+-----
 
 ## ✨ Autor
-👨‍💻 Vitor da Silva Leal
 
+**👨‍💻 Vitor da Silva Leal**
+<br>
 Profissional de Vigilância Epidemiológica
-
+<br>
 📍 Volta Redonda — RJ
+
+```
+```
