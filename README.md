@@ -128,6 +128,3 @@ Durante o desenvolvimento deste projeto, o ChatGPT foi utilizado como uma ferram
 Profissional de Vigilância Epidemiológica
 <br>
 📍 Volta Redonda — RJ
-
-```
-```
