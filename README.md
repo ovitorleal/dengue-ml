@@ -55,6 +55,7 @@ Siga os passos abaixo para executar o projeto localmente.
     ```
 
 2.  **Treine o modelo e gere as previsões:**
+    
     Este comando irá ler o arquivo `dengue.csv`, treinar o modelo e salvar o resultado `forecast_2025.csv` na pasta `outputs`.
 
     ```bash
@@ -62,6 +63,7 @@ Siga os passos abaixo para executar o projeto localmente.
     ```
 
 3.  **Gere os gráficos de visualização:**
+    
     Este comando utilizará o arquivo de previsão gerado no passo anterior para criar e salvar os gráficos na pasta `outputs`.
 
     ```bash
