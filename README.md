@@ -54,21 +54,19 @@ Siga os passos abaixo para executar o projeto localmente.
     pip install -r requirements.txt
     ```
 
-2.  **Treine o modelo e gere as previsões:**
-    
-    Este comando irá ler o arquivo `dengue.csv`, treinar o modelo e salvar o resultado `forecast_2025.csv` na pasta `outputs`.
-
+2.  **Treine o modelo e gere as previsões:** 
     ```bash
     python main.py --input dengue.csv --output outputs --seed 42
     ```
+    Este comando irá ler o arquivo `dengue.csv`, treinar o modelo e salvar o resultado `forecast_2025.csv` na pasta `outputs`.
+
 
 3.  **Gere os gráficos de visualização:**
-    
-    Este comando utilizará o arquivo de previsão gerado no passo anterior para criar e salvar os gráficos na pasta `outputs`.
-
     ```bash
     python plot_forecast_2025.py
     ```
+    Este comando utilizará o arquivo de previsão gerado no passo anterior para criar e salvar os gráficos na pasta `outputs`.
+
 
 -----
 
