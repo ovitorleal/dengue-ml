@@ -2,7 +2,7 @@
 
 ![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)
 ![Machine Learning](https://img.shields.io/badge/Machine%20Learning-RandomForest-orange?logo=scikitlearn)
-![Status](https://img.shields.io/badge/Status-Finalizado-brightgreen)
+![Status](https://img.shields.io/badge/status-Em_desenvolvimento-yellow)
 ![Licença](https://img.shields.io/badge/Licença-Livre-lightgrey)
 
 ---
