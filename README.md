@@ -78,7 +78,7 @@ Depois, ele tenta “adivinhar” como será o comportamento no próximo ano, co
 
 O objetivo não é prever números exatos, mas entender tendências — e isso já é muito valioso para a vigilância epidemiológica.
 
-🧠 Tecnologias Utilizadas
+##🧠 Tecnologias Utilizadas
 Categoria	Ferramenta
 Linguagem	🐍 Python
 Análise de Dados	📊 Pandas, NumPy
@@ -86,27 +86,21 @@ Modelagem	🤖 Scikit-learn (Random Forest)
 Visualização	📈 Matplotlib, Seaborn
 Armazenamento de Modelo	💾 Joblib
 
-🤝 Apoio do ChatGPT
-Durante o desenvolvimento, o ChatGPT foi utilizado como assistente técnico e organizacional, ajudando a:
 
-Estruturar o roteiro do projeto;
-
-Criar e depurar o código em Python;
-
-Gerar o README e a documentação;
-
-Elaborar a apresentação final e o roteiro do vídeo.
+##🤝 Apoio do ChatGPT
+Durante o desenvolvimento, o ChatGPT foi utilizado como assistente técnico e organizacional.
 
 O ChatGPT atuou como ferramenta de apoio, e todo o conteúdo foi adaptado à realidade e experiência da vigilância epidemiológica.
 
-🚀 Próximos Passos
+
+##🚀 Próximos Passos
 Incluir dados de chuva e temperatura para melhorar a precisão.
 
 Implementar uma previsão iterativa, onde cada semana prevista influencia a próxima.
 
 Expandir o modelo para outras doenças de notificação, como chikungunya e zika.
 
-✨ Autor
+##✨ Autor
 👨‍💻 Vitor da Silva Leal
 Profissional de Vigilância Epidemiológica
 📍 Volta Redonda — RJ
