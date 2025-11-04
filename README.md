@@ -1,34 +1,3 @@
-Ah, sim\! Entendi perfeitamente agora. Peço desculpas pela confusão.
-
-O problema não é o texto que eu enviei, mas **onde** você está colando ele.
-
-Analisando sua imagem, você está colando o **conteúdo inteiro do `README.md`** *dentro* de um bloco de código `bash` que já existia no seu arquivo.
-
-Veja na sua imagem:
-
-  * Na linha 32, você tem ` ```bash `
-  * Isso diz ao editor: "Tudo o que vem a seguir é um código de terminal, ignore qualquer formatação."
-  * Por isso, quando você cola o meu texto lá dentro, ele exibe `## Estrutura do Projeto` e `📂 dengue-ml/` como texto simples, em vez de formatá-los como um título e uma árvore de arquivos.
-
-### A Solução Correta
-
-Você deve substituir **TODO** o conteúdo do seu arquivo `README.md` pelo texto que eu lhe dei. O arquivo `README.md` em si *não* deve começar com ` ```bash `.
-
-**Faça o seguinte:**
-
-1.  Abra seu arquivo `README.md`.
-2.  Selecione **TUDO** (Ctrl+A ou Cmd+A).
-3.  **Delete** todo o conteúdo.
-4.  Agora, copie o bloco de código abaixo e cole no seu arquivo `README.md` (que agora está vazio).
-5.  Salve o arquivo.
-
-Quando você fizer isso, o seu editor de código (ou o GitHub) vai ler os `##` como títulos e os ` ```bash ` como *inícios* de blocos de código, e tudo será formatado corretamente.
-
-### Código completo para o `README.md`
-
-Copie tudo daqui de baixo:
-
-````markdown
 # 🦠 Previsão Semanal de Casos de Dengue — 2025
 
 ![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)
