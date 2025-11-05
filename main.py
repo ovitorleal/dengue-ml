@@ -58,7 +58,7 @@ def create_features(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def train_and_evaluate(df_features: pd.DataFrame, seed: int = 42, output_dir: str = 'outputs'):
-    # IMPORTANT: remove time_idx from features used for training (index-like)
+    # IMPORTANTE: Poderia remover time_idx das variáveis usadas no treinamento (pois ele é semelhante a um índice)
     X = df_features.drop(columns=['casos', 'ano', 'time_idx'])
     y = df_features['casos']
 
@@ -82,7 +82,7 @@ def train_and_evaluate(df_features: pd.DataFrame, seed: int = 42, output_dir: st
     best = gscv.best_estimator_
     y_pred = best.predict(X_test)
     mae = mean_absolute_error(y_test, y_pred)
-    rmse = np.sqrt(mean_squared_error(y_test, y_pred))  # compatível com todas as versões
+    rmse = np.sqrt(mean_squared_error(y_test, y_pred))  
     r2 = r2_score(y_test, y_pred)
 
     os.makedirs(output_dir, exist_ok=True)
@@ -110,7 +110,7 @@ def forecast_2025(df_original: pd.DataFrame, df_features: pd.DataFrame, model, o
         for lag in [1, 2, 3, 52]:
             lag_idx = t_idx - lag
             if lag_idx in df_feats.index:
-                row[f'lag_{lag}'] = int(df_feats.loc[lag_idx, 'casos'])
+                row[f'lag_{lag}'] = int(df_feats.loc[lag_idx, 'casos']) 
             else:
                 row[f'lag_{lag}'] = int(df_feats['casos'].mean())
 
@@ -123,19 +123,19 @@ def forecast_2025(df_original: pd.DataFrame, df_features: pd.DataFrame, model, o
 
     X_forecast = pd.DataFrame(forecast_rows)
 
-    # Use the exact feature names the model was trained with
+#   Use exatamente os nomes das variáveis (features) com os quais o modelo foi treinado
     if hasattr(model, "feature_names_in_"):
         feature_cols = list(model.feature_names_in_)
     else:
-        # fallback: use all columns except 'time_idx' (shouldn't normally happen)
+        #  alternativa: use todas as colunas, exceto 'time_idx'
         feature_cols = [c for c in X_forecast.columns if c != 'time_idx']
 
-    # Ensure X_forecast has all required columns (fill with mean if missing)
+#   Garanta que X_forecast tenha todas as colunas necessárias (preencha com a média caso alguma esteja faltando)
     for col in feature_cols:
         if col not in X_forecast.columns:
             X_forecast[col] = df_features[col].mean()
 
-    # Predict using the same order of columns
+   #Faz previsão usando a mesma ordem das colunas
     preds = model.predict(X_forecast[feature_cols])
     X_forecast['predicted_casos'] = np.round(preds).astype(int)
     X_forecast['ano'] = target_year
