@@ -27,6 +27,9 @@ plt.figure(figsize=(12, 6))
 # Gera gráfico de linha com marcadores
 plt.plot(df["semana_num"], df["predicted_casos"], marker="o", linestyle="-", label="Casos previstos (2025)")
 
+# ✅ Força o eixo X a mostrar TODAS as semanas (1 a 52)
+plt.xticks(df["semana_num"], rotation=90)
+
 # Adiciona rótulos e título
 plt.title("Previsão semanal de casos de dengue — 2025", fontsize=14)
 plt.xlabel("Semana epidemiológica", fontsize=12)
