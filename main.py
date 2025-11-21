@@ -110,14 +110,15 @@ def forecast_2025(df_original: pd.DataFrame, df_features: pd.DataFrame, model, o
         for lag in [1, 2, 3, 52]:
             lag_idx = t_idx - lag
             if lag_idx in df_feats.index:
-                row[f'lag_{lag}'] = int(df_feats.loc[lag_idx, 'casos']) 
+                row[f'lag_{lag}'] = int(df_feats.loc[lag_idx, 'casos'])  # type: ignore
             else:
                 row[f'lag_{lag}'] = int(df_feats['casos'].mean())
 
         prev_idxs = [t_idx - i for i in range(1, 5)]
-        vals = [df_feats.loc[i, 'casos'] if i in df_feats.index else df_feats['casos'].mean() for i in prev_idxs]
-        row['rolling_mean_4'] = float(np.mean(vals))
-        row['rolling_std_4'] = float(np.std(vals))
+        vals = [df_feats.loc[i, 'casos'] if i in df_feats.index else float(df_feats['casos'].mean()) 
+        for i in prev_idxs]
+        row['rolling_mean_4'] = float(np.mean(vals)) # type: ignore
+        row['rolling_std_4'] = float(np.std(vals)) # type: ignore
 
         forecast_rows.append(row)
 
